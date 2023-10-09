@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DSA Problem Statement and Solution</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>DSA Problem Statement and Solution</h1>
+  <div class="problem-statement">
+    <h2>Problem Statement</h2>
+    <p>Given an array of integers, find the maximum subarray sum.</p>
+  </div>
+  <div class="solution">
+    <h2>Solution</h2>
+    <p>The following algorithm finds the maximum subarray sum in a given array:
+
+    ```python
+def max_subarray_sum(array):
+  """Finds the maximum subarray sum in the given array.
+
+  Args:
+    array: A list of integers.
+
+  Returns:
+    The maximum subarray sum.
+  """
+
+  max_so_far = array[0]
+  current_max = array[0]
+
+  for i in range(1, len(array)):
+    current_max = max(array[i], current_max + array[i])
+    max_so_far = max(max_so_far, current_max)
+
+  return max_so_far
+
+
+    To use the algorithm, simply pass the array to the `max_subarray_sum()` function. The function will return the maximum subarray sum.
+
+    Here is an example of how to use the algorithm:
+
+    python
+array = [1, 2, 3, -4, 5]
+max_subarray_sum = max_subarray_sum(array)
+
+print(max_subarray_sum)
+</div>
+</body>
+</html>
